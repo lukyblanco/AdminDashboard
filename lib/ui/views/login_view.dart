@@ -1,6 +1,7 @@
 import 'package:admin_dashboard/providers/auth_provider.dart';
 import 'package:admin_dashboard/providers/login_form_provider.dart';
 import 'package:admin_dashboard/router/router.dart';
+import 'package:admin_dashboard/services/navigation_service.dart';
 import 'package:admin_dashboard/ui/buttons/custom_outlined_button.dart';
 import 'package:admin_dashboard/ui/inputs/custom_inputs.dart';
 import 'package:email_validator/email_validator.dart';
@@ -99,8 +100,10 @@ class LoginView extends StatelessWidget {
                           LinkText(
                             text: 'Nueva Cuenta',
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, Flurorouter.registerRoute);
+                              NavigationService.navigateTo(
+                                  Flurorouter.registerRoute);
+                              // Navigator.pushNamed(
+                              //     context, Flurorouter.registerRoute);
                             },
                           )
                         ],

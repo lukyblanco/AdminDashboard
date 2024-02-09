@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   await LocalStorage.configurePrefs();
-  Flurorouter.configureRoutes;
+  Flurorouter.configureRoutes();
   runApp(const AppState());
 }
 
@@ -41,9 +41,13 @@ class MyApp extends StatelessWidget {
       title: 'Admin Dashboard',
       // initialRoute: Flurorouter.rootRoute,
       initialRoute: '/',
+      // home: const LoginView(),
       onGenerateRoute: Flurorouter.router.generator,
       navigatorKey: NavigationService.navigatorkey,
       builder: (context, child) {
+       
+          // return DashboardLayout(child: child!);
+       
         final authProvider = Provider.of<AuthProvider>(context);
 
         if (authProvider.authStatus == AuthStatus.checking) {

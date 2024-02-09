@@ -12,6 +12,7 @@ class AdminHandlers {
     handlerFunc: (context, parameters) {
       // Lógica para la ruta de la raíz, si es necesario
       return const RootView();
+      // return const LoginView();
     },
   );
 

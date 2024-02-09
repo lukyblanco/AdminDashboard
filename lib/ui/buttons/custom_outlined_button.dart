@@ -24,7 +24,7 @@ class CustomOutlinedButton extends StatelessWidget {
           isFilled ? color.withOpacity(0.3) : Colors.transparent
         )
       ),
-      onPressed: () => onPressed,
+      onPressed: () => onPressed(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(

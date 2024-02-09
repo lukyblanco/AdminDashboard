@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:admin_dashboard/ui/views/login_view.dart';
 import 'package:admin_dashboard/ui/layouts/auth/widgets/background_twitter.dart';
 import 'package:admin_dashboard/ui/layouts/auth/widgets/cutom_titlle.dart';
 import 'package:admin_dashboard/ui/layouts/auth/widgets/links_bar.dart';

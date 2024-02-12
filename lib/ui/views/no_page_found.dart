@@ -8,6 +8,7 @@ class NotPageFoundView extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Center(
         child: Text(
           '404 - Página no encontrada',

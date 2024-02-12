@@ -5,6 +5,7 @@ import 'package:admin_dashboard/api/cafe_api.dart';
 
 import 'package:admin_dashboard/providers/auth_provider.dart';
 import 'package:admin_dashboard/providers/sidemenu_provider.dart';
+import 'package:admin_dashboard/providers/categories_provider.dart';
 
 import 'package:admin_dashboard/router/router.dart';
 
@@ -31,13 +32,12 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          lazy: false,
-          create: (context) => AuthProvider(),
-        ),
+            lazy: false, create: (context) => AuthProvider()),
         ChangeNotifierProvider(
-          lazy: false,
-          create: (context) => SideMenuProvider(),
-        ),
+            lazy: false, create: (context) => SideMenuProvider()),
+        ChangeNotifierProvider(
+            // sin el lazy false, se inicializa bajo demanda
+            create: (context) => CategoriesProvider()),
       ],
       child: const MyApp(),
     );

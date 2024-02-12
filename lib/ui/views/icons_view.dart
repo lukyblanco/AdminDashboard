@@ -9,6 +9,7 @@ class IconsView extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: ListView(
       physics: const BouncingScrollPhysics(),
       children: [

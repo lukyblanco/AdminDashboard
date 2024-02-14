@@ -9,9 +9,11 @@ class RegisterFormProvider extends ChangeNotifier {
 
   validateForm() {
     if (formkey.currentState!.validate()) {
+      // ignore: avoid_print
       print('Form valido -- login');
       return true;
     } else {
+      // ignore: avoid_print
       print('Form no valido');
       return false;
     }

@@ -3,9 +3,11 @@ import 'package:provider/provider.dart';
 
 import 'package:admin_dashboard/api/cafe_api.dart';
 
+import 'package:admin_dashboard/providers/users_provider.dart';
 import 'package:admin_dashboard/providers/auth_provider.dart';
 import 'package:admin_dashboard/providers/sidemenu_provider.dart';
 import 'package:admin_dashboard/providers/categories_provider.dart';
+import 'package:admin_dashboard/providers/user_form_provider.dart';
 
 import 'package:admin_dashboard/router/router.dart';
 
@@ -16,6 +18,7 @@ import 'package:admin_dashboard/services/notifications_service.dart';
 import 'package:admin_dashboard/ui/layouts/auth/auth_layout.dart';
 import 'package:admin_dashboard/ui/layouts/dashboard/dashboard_layout.dart';
 import 'package:admin_dashboard/ui/layouts/splash/splash_layout.dart';
+
 
 void main() async {
   await LocalStorage.configurePrefs();
@@ -38,6 +41,8 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(
             // sin el lazy false, se inicializa bajo demanda
             create: (context) => CategoriesProvider()),
+        ChangeNotifierProvider(create: (context) => UsersProvider()),
+        ChangeNotifierProvider(create: (context) => UserFormProvider()),
       ],
       child: const MyApp(),
     );

@@ -1,7 +1,7 @@
 import 'package:admin_dashboard/providers/auth_provider.dart';
 import 'package:admin_dashboard/providers/login_form_provider.dart';
 import 'package:admin_dashboard/router/router.dart';
-import 'package:admin_dashboard/services/navigation_service.dart';
+// import 'package:admin_dashboard/services/navigation_service.dart';
 import 'package:admin_dashboard/ui/buttons/custom_outlined_button.dart';
 import 'package:admin_dashboard/ui/inputs/custom_inputs.dart';
 import 'package:email_validator/email_validator.dart';
@@ -37,7 +37,8 @@ class LoginView extends StatelessWidget {
                         children: [
                           //? Email
                           TextFormField(
-                            onFieldSubmitted: (_) => onFormSubmit(loginFormProvider, authProvider),
+                            onFieldSubmitted: (_) =>
+                                onFormSubmit(loginFormProvider, authProvider),
                             validator: (value) {
                               if (!EmailValidator.validate(value ?? '')) {
                                 return 'Email no valido';
@@ -59,7 +60,8 @@ class LoginView extends StatelessWidget {
 
                           //? PassWord
                           TextFormField(
-                            onFieldSubmitted: (_) => onFormSubmit(loginFormProvider, authProvider),
+                            onFieldSubmitted: (_) =>
+                                onFormSubmit(loginFormProvider, authProvider),
                             onChanged: (value) {
                               loginFormProvider.password = value;
                             },
@@ -85,7 +87,8 @@ class LoginView extends StatelessWidget {
 
                           //*INGRESAR
                           CustomOutlinedButton(
-                            onPressed: () => onFormSubmit(loginFormProvider, authProvider),
+                            onPressed: () =>
+                                onFormSubmit(loginFormProvider, authProvider),
                             text: 'Ingresar',
                           ),
 
@@ -95,8 +98,10 @@ class LoginView extends StatelessWidget {
                           LinkText(
                             text: 'Nueva Cuenta',
                             onPressed: () {
-                              NavigationService.navigateTo(
-                                  Flurorouter.registerRoute);
+                              Navigator.pushReplacementNamed(
+                                  context, Flurorouter.registerRoute);
+                              // NavigationService.navigateTo(
+                              //     Flurorouter.registerRoute);
                               // Navigator.pushNamed(
                               //     context, Flurorouter.registerRoute);
                             },
@@ -110,7 +115,8 @@ class LoginView extends StatelessWidget {
         ));
   }
 
-  void onFormSubmit(  LoginFormProvider loginFormProvider, AuthProvider authProvider) {
+  void onFormSubmit(
+      LoginFormProvider loginFormProvider, AuthProvider authProvider) {
     final isValid = loginFormProvider.validateForm();
     if (isValid) {
       authProvider.login(
